@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AcademyKuumaLinjaXOXO.Models.Message>
+
+@{
+    ViewBag.Title = "Kirjaudu";
+}
+
+
+
+<h2>Kirjaudu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SendTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrivateMessage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To_Person_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpireAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.NickName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateMessage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.To_Person_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpireAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.NickName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Message_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Message_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Message_Id })
+        </td>
+    </tr>
+}
+
+</table>
