@@ -10,6 +10,7 @@ namespace AcademyKuumaLinjaXOXO.Controllers
     {
         public ActionResult Index()
         {
+                
             return View();
         }
 
