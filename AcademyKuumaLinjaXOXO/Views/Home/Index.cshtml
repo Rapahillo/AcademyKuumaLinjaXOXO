@@ -1,5 +1,43 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1>Academy Kuuma Linja XOXO</h1>
+    <p class="lead">Tämä on johdanto, jos sitä tarvitaan.</p>
+</div>
+<h2>Kirjaudu</h2>
+<br />
+@using (Html.BeginForm("Kirjaudu", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 
-ACTION!
+    <div class="col-md-4">
+        <div class="container">
+            <label for="uname"><b>Käyttäjänimi</b></label>
+            <input type="text" placeholder="Anna käyttäjänimi" name="nickname" required>
+            <label for="psw"><b>Salasana</b></label>
+            <input type="password" placeholder="Anna salasana" name="password" required>
+            <button type="submit">Kirjaudu</button>
+        </div>
+    </div>
+}
+<br />
+<br />
+<h2>Rekisteröidy</h2>
+<br />
+@using (Html.BeginForm("Luokäyttäjä", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="col-md-4">
+        <div class="container">
+            <label for="uname"><b>Käyttäjänimi</b></label>
+            <input type="text" placeholder="Anna käyttäjänimi" name="nickname" required>
+            <label for="psw"><b>Salasana</b></label>
+            <input type="password" placeholder="Anna salasana" name="password" required>
+            <button type="submit">Rekisteröidy</button>
+        </div>
+        <br />
+    </div>
+}
