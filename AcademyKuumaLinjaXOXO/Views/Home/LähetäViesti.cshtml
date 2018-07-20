@@ -7,20 +7,6 @@
 <h2>LähetäViesti</h2>
 
 
-@*@using (Html.BeginForm("LähetäViesti", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-
-    <div class="col-md-4">
-        <div class="container">
-            <label for="title"><b>Otsikko</b></label>
-            <input type="text" placeholder="Viestin otsikko" name="otsikko" required>
-            <label for="msg"><b>Viesti</b></label>
-            <input type="text" placeholder="Kirjoita viesti" name="viesti" required>
-            <button type="submit">Lähetä viesti</button>
-        </div>
-    </div>
-}*@
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

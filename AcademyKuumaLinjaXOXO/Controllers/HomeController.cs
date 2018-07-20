@@ -66,7 +66,7 @@ namespace AcademyKuumaLinjaXOXO.Controllers
 
             }
 
-            return View("LähetäViesti");
+            return View("Kirjaudu", db.Messages);
         }
         public ActionResult Kirjaudu(string nickname, string password)
         {
@@ -85,7 +85,7 @@ namespace AcademyKuumaLinjaXOXO.Controllers
             else
             {
                 HaePersonID();
-                return View("LähetäViesti");
+                return View(db.Messages);
             }
         }
 
@@ -98,18 +98,19 @@ namespace AcademyKuumaLinjaXOXO.Controllers
         public ActionResult LähetäViesti(String viesti)
         {
 
-
             Message message = new Message();
 
             message.MessageText = viesti;
             message.SendTime = DateTime.Now.ToLocalTime();
             message.PrivateMessage = false;
-            message.From_Person_Id = user.Person_Id;
+
+            message.From_Person_Id = 17;
+            //message.From_Person_Id = user.Person_Id;
 
             db.Messages.Add(message);
             db.SaveChanges();
 
-            return View("LähetäViesti", db.Messages);
+            return View("Kirjaudu", db.Messages);
         }
 
         public void HaePersonID()
